@@ -26,7 +26,6 @@ class sonarqube (
   $download_dir     = '/usr/local/src',
   $context_path     = '/',
   $arch             = $sonarqube::params::arch,
-  $https            = {},
   $ldap             = {},
   # ldap and pam are mutually exclusive. Setting $ldap will annihilate the setting of $pam
   $pam              = {},
