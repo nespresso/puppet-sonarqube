@@ -49,6 +49,8 @@ class sonarqube (
   $search_java_opts = undef,
   $search_host      = '127.0.0.1',
   $search_port      = '9001',
+  $ce_java_opts     = undef,
+  $ce_worker_count  = undef,
   $config           = undef,
 ) inherits sonarqube::params {
   validate_absolute_path($download_dir)

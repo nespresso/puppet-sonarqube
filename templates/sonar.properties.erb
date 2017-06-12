@@ -150,7 +150,11 @@ sonar.ajp.port=<%= @portAjp %>
 #    is not enabled by default on your environment:
 #    http://docs.oracle.com/javase/8/docs/technotes/guides/vm/server-class.html
 #
+<% if @ce_java_opts -%>
+sonar.ce.javaOpts=<%= @ce_java_opts %>
+<% else -%>
 #sonar.ce.javaOpts=-Xmx512m -Xms128m -XX:+HeapDumpOnOutOfMemoryError -Djava.net.preferIPv4Stack=true
+<% end -%>
 
 # Same as previous property, but allows to not repeat all other settings like -Xmx
 #sonar.ce.javaAdditionalOpts=
@@ -161,8 +165,11 @@ sonar.ajp.port=<%= @portAjp %>
 #    Using N workers will require N times as much Heap memory (see property
 #    sonar.ce.javaOpts to tune heap) and produce N times as much IOs on disk, database and
 #    Elasticsearch. The number of workers must suit your environment.
+<% if @ce_worker_count -%>
+sonar.ce.workerCount=<%= @ce_worker_count%>
+<% else -%>
 #sonar.ce.workerCount=1
-
+<% end -%>
 
 #--------------------------------------------------------------------------------------------------
 # ELASTICSEARCH
