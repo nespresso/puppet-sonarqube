@@ -8,16 +8,5 @@
 #----- Default SonarQube server
 sonar.host.url=<%= @sonarqube_server %>
 
-<% if !@jdbc.empty? -%>
-#----- Database
-sonar.jdbc.url=<%= @jdbc['url'] %>
-sonar.jdbc.username=<%= @jdbc['username'] %>
-sonar.jdbc.password=<%= @jdbc['password'] %>
-<% end -%>
-
 #----- Default source code encoding
 #sonar.sourceEncoding=UTF-8
-
-#----- Security (when 'sonar.forceAuthentication' is set to 'true')
-#sonar.login=admin
-#sonar.password=admin
